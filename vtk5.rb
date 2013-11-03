@@ -9,7 +9,7 @@ class Vtk5 < Formula
   depends_on :x11 => :optional
   depends_on 'qt' => :optional
   depends_on :python => :recommended
-  conflicts_with 'vtk', :because =>  "Different versions of the same library."
+  conflicts_with 'homebrew/science/vtk', :because =>  "Different versions of the same library."
   # If --with-qt and --with-python, then we automatically use PyQt, too!
   if build.with? 'qt'
     if build.with? 'python3'
@@ -94,7 +94,7 @@ class Vtk5 < Formula
         args << ".."
         system 'cmake', *args
  
-       system 'make'
+        system 'make'
         system 'make install'
       end
     end
